@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
+
+:root {
+    --color-accent: #b5c640;
+    --color-text: #fff;
+    --color-muted: #eee;
+    --color-panel: rgba(18, 27, 33, 0.72);
+    --color-divider: rgba(255, 255, 255, 0.16);
+    --page-background: #252a2d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    color: var(--color-text);
+    background: var(--page-background) url('images/food-image-bg.png') center / cover fixed no-repeat;
+    font: 16px 'Lato', sans-serif;
+}
+
+main {
+    position: relative;
+    width: min(1000px, 92%);
+    min-height: 560px;
+    margin: 6vh auto;
+    padding: 55px 5% 40px 48%;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 8px;
+    background: var(--color-panel);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+}
+
+main::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0 auto 0 0;
+    width: 43%;
+    background: url('images/food-image-bg.png') center / cover no-repeat;
+    content: '';
+}
+
+h1 {
+    margin: 0 0 24px;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.recipies-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-bottom: 25px;
+}
+
+.recipies-info p {
+    margin: 0;
+    color: var(--color-accent);
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.recipies-info span {
+    display: block;
+    margin-top: 6px;
+    color: var(--color-text);
+    font-size: 14px;
+    text-transform: none;
+}
+
+.btn-primary {
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 3px;
+    color: #20251d;
+    background: var(--color-accent);
+    font: inherit;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.btn-primary:hover {
+    background: #c7d64e;
+    transform: translateY(-1px);
+}
+
+.btn-primary:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 3px;
+}
+
+.prep-steps {
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+}
+
+.step {
+    position: relative;
+    margin-bottom: 13px;
+    padding: 0 0 18px 35px;
+    border-bottom: 1px solid var(--color-divider);
+    color: var(--color-muted);
+    font-size: 12px;
+    line-height: 1.65;
+    counter-increment: step;
+}
+
+.step::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--color-accent);
+    content: counter(step, decimal-leading-zero);
+    font-size: 16px;
+    font-weight: 900;
+}
+
+@media (max-width: 700px) {
+    main {
+        min-height: 0;
+        margin: 4vh auto;
+        padding: 260px 24px 30px;
+    }
+
+    main::before {
+        right: 0;
+        bottom: auto;
+        width: 100%;
+        height: 230px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-primary {
+        transition: none;
+    }
+}

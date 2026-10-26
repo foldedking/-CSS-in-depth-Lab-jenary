@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font: 16px 'Lato', sans-serif;
+  color: #333;
+}
+
+header {
+  min-height: 100vh;
+  padding: 0 5% 48px;
+  color: #fff;
+  background: #24477f;
+  overflow: hidden;
+}
+
+nav {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  width: 100px;
+  object-fit: contain;
+}
+
+.nav-primary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.cta-btn a,
+.header-btn {
+  display: inline-block;
+  background: #20c5e8;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 2px;
+}
+
+.header-title {
+  margin: 78px 0 8px;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.header-subtitle {
+  margin: 0;
+  text-align: center;
+  color: #8ba5ca;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+#button-container {
+  margin: 24px 0 65px;
+  text-align: center;
+}
+
+.header-btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 10px;
+  padding: 9px 18px;
+  cursor: pointer;
+}
+
+.header-services {
+  list-style: none;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.service {
+  padding: 20px 24px;
+}
+
+.service-title {
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 900;
+  margin: 0 0 18px;
+}
+
+.service-intro {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #c8d5e7;
+  margin: 0;
+}
+
+.service-link {
+  display: block;
+  margin-top: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+@media (max-width: 700px) {
+  nav {
+    height: auto;
+    padding: 20px 0;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .nav-primary {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .header-title {
+    margin-top: 45px;
+    font-size: 25px;
+  }
+
+  .header-services {
+    grid-template-columns: 1fr;
+  }
+
+  .service {
+    padding: 20px 5px;
+  }
+}
